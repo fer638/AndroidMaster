@@ -1,4 +1,4 @@
-package com.jorgefer.androidmaster
+package com.jorgefer.androidmaster.sintaxis
 
 fun main() {
     ifAnidado()

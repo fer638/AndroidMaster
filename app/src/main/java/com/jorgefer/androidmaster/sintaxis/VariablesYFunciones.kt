@@ -1,4 +1,4 @@
-package com.jorgefer.androidmaster
+package com.jorgefer.androidmaster.sintaxis
 val age:Int = 30
 
 
@@ -84,5 +84,5 @@ fun variablesNumericas(){
     println(age2/age2)
 
     println("Modulo:")
-    println(age%age2)
+    println(age %age2)
 }
