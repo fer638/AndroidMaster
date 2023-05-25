@@ -2,5 +2,6 @@
     <string name="app_name">AndroidMaster</string>
     <string name = "male">Hombre</string>
     <string name = "female">Mujer</string>
+    <string name = "height">Altura</string>
 
 </resources>
