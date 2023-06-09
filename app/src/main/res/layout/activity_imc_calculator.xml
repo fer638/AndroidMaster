@@ -207,6 +207,7 @@
                     android:layout_marginEnd="16dp"
                     >
 
+
                 </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -227,6 +228,69 @@
         app:layout_constraintStart_toEndOf="@+id/viewWeight"
         app:layout_constraintTop_toBottomOf="@+id/viewHeight"
         android:layout_height="150dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textAllCaps="true"
+                android:textColor="@color/title_text"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:id="@+id/tvAge"
+                tools:text="30"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSubstractAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_substract"
+                    app:tint="@color/white"
+                    app:backgroundTint="@color/background_fab"
+                    android:layout_marginEnd="16dp"
+                    >
+
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnPlusAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus"
+                    app:tint="@color/white"
+                    app:backgroundTint="@color/background_fab"
+                    android:layout_marginEnd="16dp"
+                    >
+
+
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
     </androidx.cardview.widget.CardView>

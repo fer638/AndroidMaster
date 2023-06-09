@@ -15,14 +15,20 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private var isMaleSelected:Boolean = true
     private var isFemaleSelected:Boolean = false
     private var currentWeight:Int = 60
+    private var currentAge:Int = 30
 
     private lateinit var viewMale:CardView
     private lateinit var viewFemale:CardView
     private lateinit var tvHeight:TextView
     private lateinit var rsHeight:RangeSlider
+    //button weight
     private lateinit var btnSubstractWeight: FloatingActionButton
     private lateinit var btnPlusWheight: FloatingActionButton
     private lateinit var tvWeight: TextView
+    //butom age
+    private lateinit var btnSubstractAge: FloatingActionButton
+    private lateinit var btnPlusAge: FloatingActionButton
+    private lateinit var tvAge: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +49,9 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnSubstractWeight = findViewById(R.id.btnSubstractWeight)
         btnPlusWheight = findViewById(R.id.btnPlusWeight)
         tvWeight = findViewById(R.id.tvWeight)
-
+        btnSubstractAge = findViewById(R.id.btnSubstractAge)
+        btnPlusAge = findViewById(R.id.btnPlusAge)
+        tvAge = findViewById(R.id.tvAge)
     }
 
     //lo que va a recibir o esucchar
@@ -73,12 +81,24 @@ class ImcCalculatorActivity : AppCompatActivity() {
             setWeight()
         }
 
+        btnPlusAge.setOnClickListener{
+            currentAge +=1
+            setAge()
+        }
+
+        btnSubstractAge.setOnClickListener{
+            currentAge -=1
+            setAge()
+        }
     }
 
     private fun setWeight() {
         tvWeight.text = currentWeight.toString()
     }
 
+    private  fun setAge(){
+        tvAge.text = currentAge.toString()
+    }
     private fun changeGender(){
         isMaleSelected = !isMaleSelected
         isFemaleSelected = !isFemaleSelected
@@ -104,6 +124,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private fun initUI() {
         setGenderColor()
         setWeight()
+        setAge()
     }
 
 
