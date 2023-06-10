@@ -1,5 +1,6 @@
 package com.jorgefer.androidmaster.imccalculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -35,6 +36,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private lateinit var btnCalculate:Button
 
+    companion object{
+        const val IMC_KEY = "IMC_RESULT"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +64,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnPlusAge = findViewById(R.id.btnPlusAge)
         tvAge = findViewById(R.id.tvAge)
         btnCalculate = findViewById(R.id.btnCalculate)
+
+
     }
 
     //lo que va a recibir o esucchar
@@ -100,15 +107,22 @@ class ImcCalculatorActivity : AppCompatActivity() {
         }
 
         btnCalculate.setOnClickListener{
-            calculateImc()
+           val result = calculateImc()
+            navigateToRessult(result)
         }
     }
 
-    private fun calculateImc() {
+    private fun navigateToRessult(result: Double) {
+        val intent = Intent(this, ResultIMCMainActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
+        startActivity(intent)
+
+    }
+
+    private fun calculateImc():Double {
         val df = DecimalFormat("#.##")
         val imc = currentWeight/ (currentHeihght.toDouble()/100 * currentHeihght.toDouble() /100)
-        val result = df.format(imc).toDouble()
-        Log.i("alaa", "El imc es $result")
+        return df.format(imc).toDouble()
     }
 
     private fun setWeight() {
